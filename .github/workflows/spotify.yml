@@ -1,0 +1,133 @@
+name: Update Spotify Now Playing
+
+on:
+  schedule:
+    - cron: "0 * * * *"  # Run every hour
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  spotify:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: Create Spotify badge script
+        run: |
+          mkdir -p scripts
+          cat > scripts/spotify.js << 'EOF'
+          const fs = require("fs");
+          const https = require("https");
+          
+          // Configura le tue credenziali Spotify come GitHub secrets:
+          // SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, SPOTIFY_REFRESH_TOKEN
+          const clientId = process.env.SPOTIFY_CLIENT_ID || "";
+          const clientSecret = process.env.SPOTIFY_CLIENT_SECRET || "";
+          const refreshToken = process.env.SPOTIFY_REFRESH_TOKEN || "";
+          
+          if (!clientId || !clientSecret || !refreshToken) {
+            console.log("❌ Credenziali Spotify non configurate. Vedi il README per istruzioni.");
+            fs.writeFileSync("spotify-badge.html", `
+              <p align="center">
+                <a href="https://open.spotify.com/user/Gab:">
+                  <img src="https://img.shields.io/badge/Spotify-Ascolta%20su%20Spotify-1DB954?style=for-the-badge&logo=spotify&logoColor=white" alt="Spotify" />
+                </a>
+              </p>
+            `);
+            process.exit(0);
+          }
+          
+          // Ottieni access token
+          const authString = Buffer.from(`${clientId}:${clientSecret}`).toString("base64");
+          const options = {
+            hostname: "accounts.spotify.com",
+            path: "/api/token",
+            method: "POST",
+            headers: {
+              "Authorization": `Basic ${authString}`,
+              "Content-Type": "application/x-www-form-urlencoded"
+            }
+          };
+          
+          const req = https.request(options, (res) => {
+            let data = "";
+            res.on("data", chunk => data += chunk);
+            res.on("end", () => {
+              const json = JSON.parse(data);
+              if (json.access_token) {
+                // Ottieni la traccia in riproduzione
+                const spotifyOptions = {
+                  hostname: "api.spotify.com",
+                  path: "/v1/me/player/currently-playing",
+                  method: "GET",
+                  headers: {
+                    "Authorization": `Bearer ${json.access_token}`
+                  }
+                };
+                
+                const spotifyReq = https.request(spotifyOptions, (res) => {
+                  let spotifyData = "";
+                  res.on("data", chunk => spotifyData += chunk);
+                  res.on("end", () => {
+                    try {
+                      const track = JSON.parse(spotifyData);
+                      let badge = `
+                        <p align="center">
+                          <a href="https://open.spotify.com/user/Gab:">
+                            <img src="https://img.shields.io/badge/Spotify-Ascolta%20su%20Spotify-1DB954?style=for-the-badge&logo=spotify&logoColor=white" alt="Spotify" />
+                          </a>
+                        </p>
+                      `;
+                      
+                      if (track.item) {
+                        const artist = track.item.artists[0].name;
+                        const song = track.item.name;
+                        const isPlaying = track.is_playing ? "🎵 In riproduzione" : "⏸️ In pausa";
+                        badge = `
+                          <p align="center">
+                            ${isPlaying}: <strong>${song}</strong> by ${artist}
+                            <br/>
+                            <a href="https://open.spotify.com/track/${track.item.id}">
+                              <img src="https://img.shields.io/badge/Spotify-Ascolta-1DB954?style=flat-square&logo=spotify&logoColor=white" />
+                            </a>
+                          </p>
+                        `;
+                      }
+                      fs.writeFileSync("spotify-badge.html", badge);
+                    } catch (e) {
+                      console.error("Errore:", e.message);
+                    }
+                  });
+                });
+                spotifyReq.on("error", (e) => console.error(e));
+                spotifyReq.end();
+              }
+            });
+          });
+          
+          req.write(`grant_type=refresh_token&refresh_token=${refreshToken}`);
+          req.on("error", (e) => console.error(e));
+          req.end();
+          EOF
+        shell: bash
+
+      - name: Run Spotify script
+        env:
+          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+          SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
+        run: node scripts/spotify.js
+
+      - name: Commit and push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add spotify-badge.html || true
+          git commit -m "chore: update spotify now-playing" || true
+          git push || true
