@@ -21,15 +21,16 @@
 name: Gabriele Rossoni
 location: Crema, Lombardy 🇮🇹
 role: Student Developer & AI Builder
+languages: [Python, Java, C, JavaScript, TypeScript, SQL, C#]
+ai_stack: [Ollama, FastAPI, ChromaDB, Whisper, WebSocket]
 focus:
-  - LLM-powered assistant systems
+  - LLM-powered agentic AI systems
   - IoT & LoRaWAN embedded networks
-  - Full-stack web applications
+  - Telegram bots & automation tools
 currently_learning:
-  - Advanced JavaScript & async APIs
-  - Machine Learning foundations
+  - Machine Learning & agentic AI
   - Cybersecurity & data structures
-fun_fact: I build AI assistants AND Arduino sensors — same curiosity, different voltages ⚡
+  - Cloud & DevOps basics
 ```
 
 ---
@@ -46,6 +47,8 @@ fun_fact: I build AI assistants AND Arduino sensors — same curiosity, differen
 ![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
 ![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)
 ![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+
 
 **Web & Frameworks**
 
@@ -53,6 +56,8 @@ fun_fact: I build AI assistants AND Arduino sensors — same curiosity, differen
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+
 
 **Tools & Platforms**
 
@@ -62,6 +67,8 @@ fun_fact: I build AI assistants AND Arduino sensors — same curiosity, differen
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Arduino](https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white)
 ![Raspberry Pi](https://img.shields.io/badge/Raspberry_Pi-C51A4A?style=for-the-badge&logo=raspberrypi&logoColor=white)
+![Ollama](https://img.shields.io/badge/Ollama-000000?style=for-the-badge&logoColor=white)
+![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)
 
 </div>
 
@@ -70,36 +77,67 @@ fun_fact: I build AI assistants AND Arduino sensors — same curiosity, differen
 ## 🚀 Featured Projects
 
 <div align="center">
+<div align="center">
 <table>
   <tr>
     <td width="50%" align="center">
       <h3>🤖 Maya AI Assistant</h3>
       <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square" />
       <br/><br/>
-      <p>LLM-powered conversational assistant with multi-model support, real-time capabilities and seamless API integration.</p>
+      <p>AI agentica locale con Ollama + FastAPI, pipeline Planner→Executor→Validator, Arduino, ChromaDB, Whisper TTS e 14 tool modulari.</p>
       <p>
-        <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" />
-        <img src="https://img.shields.io/badge/AI-Powered-blueviolet?style=flat-square" />
+        <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
+        <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" />
+        <img src="https://img.shields.io/badge/Ollama-000000?style=flat-square" />
       </p>
       <a href="https://github.com/gabrielerossoni/maya-ai-assistant">
         <img src="https://img.shields.io/badge/View%20on%20GitHub-%23181717.svg?style=for-the-badge&logo=github&logoColor=white" />
       </a>
     </td>
     <td width="50%" align="center">
-      <h3>📡 LoRaWAN Network</h3>
-      <img src="https://img.shields.io/badge/Status-In%20Progress-orange?style=flat-square" />
+      <h3>🗂️ Download Organizer</h3>
+      <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square" />
       <br/><br/>
-      <p>End-to-end IoT network using LoRaWAN protocol — Arduino sensors, gateway setup, and cloud data pipeline.</p>
+      <p>Organizza i download automaticamente con LLM locale (Ollama). Impara dalle tue abitudini. 100% privacy-first, nessun dato inviato al cloud.</p>
+      <p>
+        <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
+        <img src="https://img.shields.io/badge/Local_LLM-blueviolet?style=flat-square" />
+      </p>
+      <a href="https://github.com/gabrielerossoni/download_organizer">
+        <img src="https://img.shields.io/badge/View%20on%20GitHub-%23181717.svg?style=for-the-badge&logo=github&logoColor=white" />
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <h3>⛽ Fuel Tracker Bot</h3>
+      <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square" />
+      <br/><br/>
+      <p>Bot Telegram stateless che trova i carburanti più economici nella tua zona. Nessun dato salvato lato server.</p>
+      <p>
+        <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
+        <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=flat-square&logo=telegram&logoColor=white" />
+      </p>
+      <a href="https://github.com/gabrielerossoni/bot-telegram-fuel-tracker">
+        <img src="https://img.shields.io/badge/View%20on%20GitHub-%23181717.svg?style=for-the-badge&logo=github&logoColor=white" />
+      </a>
+    </td>
+    <td width="50%" align="center">
+      <h3>🧵 Gestione Sartoria</h3>
+      <img src="https://img.shields.io/badge/Status-Completed-blue?style=flat-square" />
+      <br/><br/>
+      <p>Sistema completo in C per monitorare rotoli di tessuto in una sartoria artigianale, con interfaccia web moderna integrata.</p>
       <p>
         <img src="https://img.shields.io/badge/C-00599C?style=flat-square&logo=c&logoColor=white" />
-        <img src="https://img.shields.io/badge/IoT-Arduino-teal?style=flat-square" />
+        <img src="https://img.shields.io/badge/Web_UI-HTML-E34F26?style=flat-square" />
       </p>
-      <a href="https://github.com/gabrielerossoni">
+      <a href="https://github.com/gabrielerossoni/GestioneSartoria">
         <img src="https://img.shields.io/badge/View%20on%20GitHub-%23181717.svg?style=for-the-badge&logo=github&logoColor=white" />
       </a>
     </td>
   </tr>
 </table>
+</div>
 </div>
 
 ---
@@ -109,8 +147,8 @@ fun_fact: I build AI assistants AND Arduino sensors — same curiosity, differen
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/gabrielerossoni/gabrielerossoni/raw/main/output/github-contribution-grid-snake-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/gabrielerossoni/gabrielerossoni/main/output/github-contribution-grid-snake.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/gabrielerossoni/gabrielerossoni/raw/main/output/github-contribution-grid-snake.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/gabrielerossoni/gabrielerossoni/main/output/github-contribution-grid-snake-dark.svg">
   <img alt="GitHub Contribution Snake" src="https://github.com/gabrielerossoni/gabrielerossoni/raw/main/output/github-contribution-grid-snake.svg" />
 </picture>
 
@@ -122,12 +160,11 @@ fun_fact: I build AI assistants AND Arduino sensors — same curiosity, differen
 
 <div align="center">
 
-<!-- Top Languages — github-profile-summary-cards, no rate limit -->
-<img height="180" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=gabrielerossoni&theme=github_dark" alt="Top Languages" />
-
 <br/>
 
 <img src="https://github-readme-streak-stats.herokuapp.com?user=gabrielerossoni&theme=github-dark-blue&hide_border=true&background=0D1117&ring=58A6FF&fire=FFB000&currStreakLabel=58A6FF" />
+
+<img src="https://github-profile-trophy.vercel.app/?username=gabrielerossoni&theme=darkhub&no-frame=true&no-bg=true&margin-w=4&column=4" alt="Trophies" />
 
 <br/>
 
