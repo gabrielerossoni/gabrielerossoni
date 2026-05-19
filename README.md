@@ -82,7 +82,7 @@ currently_learning:
   <tr>
     <td width="50%" align="center">
       <h3>🤖 Maya AI Assistant</h3>
-      <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square" />
+      <img src="https://img.shields.io/github/last-commit/gabrielerossoni/maya-ai-assistant?style=flat-square&logo=github" />
       <br/><br/>
       <p>AI agentica locale con Ollama + FastAPI, pipeline Planner→Executor→Validator, Arduino, ChromaDB, Whisper TTS e 14 tool modulari.</p>
       <p>
@@ -96,7 +96,7 @@ currently_learning:
     </td>
     <td width="50%" align="center">
       <h3>🗂️ Download Organizer</h3>
-      <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square" />
+      <img src="https://img.shields.io/github/last-commit/gabrielerossoni/download_organizer?style=flat-square&logo=github" />
       <br/><br/>
       <p>Organizza i download automaticamente con LLM locale (Ollama). Impara dalle tue abitudini. 100% privacy-first, nessun dato inviato al cloud.</p>
       <p>
@@ -111,7 +111,7 @@ currently_learning:
   <tr>
     <td width="50%" align="center">
       <h3>⛽ Fuel Tracker Bot</h3>
-      <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square" />
+      <img src="https://img.shields.io/github/last-commit/gabrielerossoni/bot-telegram-fuel-tracker?style=flat-square&logo=github" />
       <br/><br/>
       <p>Bot Telegram stateless che trova i carburanti più economici nella tua zona. Nessun dato salvato lato server.</p>
       <p>
@@ -124,7 +124,7 @@ currently_learning:
     </td>
     <td width="50%" align="center">
       <h3>🧵 Gestione Sartoria</h3>
-      <img src="https://img.shields.io/badge/Status-Completed-blue?style=flat-square" />
+      <img src="https://img.shields.io/github/last-commit/gabrielerossoni/GestioneSartoria?style=flat-square&logo=github" />
       <br/><br/>
       <p>Sistema completo in C per monitorare rotoli di tessuto in una sartoria artigianale, con interfaccia web moderna integrata.</p>
       <p>
