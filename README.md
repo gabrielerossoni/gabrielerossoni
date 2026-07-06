@@ -164,8 +164,6 @@ currently_learning:
 
 <img src="https://github-readme-streak-stats.herokuapp.com?user=gabrielerossoni&theme=github-dark-blue&hide_border=true&background=0D1117&ring=58A6FF&fire=FFB000&currStreakLabel=58A6FF" />
 
-<img src="https://github-profile-trophy.vercel.app/?username=gabrielerossoni&theme=darkhub&no-frame=true&no-bg=true&margin-w=4&column=4" alt="Trophies" />
-
 <br/>
 
 <img src="https://github-readme-activity-graph.vercel.app/graph?username=gabrielerossoni&theme=github-compact&bg_color=0D1117&color=58A6FF&line=1F6FEB&point=FFB000&hide_border=true" />
