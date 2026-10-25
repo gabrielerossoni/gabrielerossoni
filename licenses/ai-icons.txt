@@ -1,0 +1,23 @@
+MCP, Ollama, GitHub, Telegram, NotebookLM, n8n, Notion and Obsidian logo paths are from Simple Icons (CC0 1.0):
+https://github.com/simple-icons/simple-icons
+https://creativecommons.org/publicdomain/zero/1.0/
+
+The Agent Skills book and AI Agents robot symbols are custom category icons,
+not official product logos. The tile layout was made for this README.
+
+Brand correction sources (2026-10-25):
+Notion: https://notion.notion.site/Media-Kit-205535b1d9c4440497a3d7a2ac096286
+GitHub: https://brand.github.com/foundations/logo
+MCP: https://modelcontextprotocol.io
+Ollama: https://github.com/ollama/ollama/blob/main/docs/ollama-logo.svg
+Agent Skills: https://github.com/agentskills/agentskills/blob/main/docs/favicon.svg (replaces the custom book)
+n8n: https://github.com/n8n-io/n8n/blob/master/packages/frontend/@n8n/design-system/src/components/N8nLogo/logo-icon.svg (original current shape)
+Obsidian: https://obsidian.md/images/obsidian-logo-gradient.svg (original gradient, unmodified)
+NotebookLM: https://notebooklm.google/_/static/branding/v6/light_mode/favicon/favicon.svg (original colors, unmodified)
+Telegram: https://telegram.org/tour/screenshots
+Python: https://www.python.org/community/logos/
+Node.js: https://nodejs.org/en/about/branding
+AI Agents is a generic category: its robot is a custom neutral symbol, not an official logo.
+Tile backgrounds and rounded corners are README presentation, not official app icons.
+
+User-selected display variants: Agent Skills custom book symbol; n8n connected-node mark from Simple Icons.

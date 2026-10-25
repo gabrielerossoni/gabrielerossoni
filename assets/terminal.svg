@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="300" viewBox="0 0 960 300" role="img" aria-labelledby="title desc">
+<title id="title">Gabriele — workspace</title><desc id="desc">Computer science student. MCP servers, agent skills, AI agents and local LLMs.</desc>
+<rect x="1" y="1" width="958" height="298" rx="12" fill="#0d1117" stroke="#30363d"/>
+<path d="M1 42H959" stroke="#30363d"/>
+<circle cx="23" cy="22" r="5" fill="#f85149"/><circle cx="41" cy="22" r="5" fill="#d29922"/><circle cx="59" cy="22" r="5" fill="#3fb950"/>
+<g font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="18">
+<text x="480" y="28" text-anchor="middle" fill="#8b949e" font-size="13">gabriele@lab: ~</text>
+<text x="28" y="82" fill="#3fb950">$ whoami</text>
+<text x="28" y="112" fill="#e6edf3">Gabriele Rossoni · computer science student</text>
+<text x="28" y="155" fill="#3fb950">$ cat focus.txt</text>
+<text x="28" y="185" fill="#79c0ff">MCP servers · Agent skills · Tool calling · Local LLMs</text>
+<text x="28" y="228" fill="#3fb950">$ cat tools.txt</text>
+<text x="28" y="258" fill="#e6edf3">AI agents · Python · Ollama · FastAPI · GitHub</text>
+<rect class="cursor" x="28" y="275" width="9" height="3" fill="#3fb950"/>
+</g><style>.cursor{animation:blink 1.6s steps(1) infinite}@keyframes blink{50%{opacity:0}}@media(prefers-reduced-motion:reduce){.cursor{animation:none}}</style>
+</svg>

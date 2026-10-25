@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="210" viewBox="0 0 960 210" role="img" aria-labelledby="title desc">
+<title id="title">Gabriele Rossoni</title><desc id="desc">Computer science student. AI tools, MCP and automation.</desc>
+<defs><linearGradient id="blue"><stop stop-color="#0d1117"/><stop offset=".52" stop-color="#164a8a"/><stop offset="1" stop-color="#3972b7"/></linearGradient></defs>
+<path d="M0 0H960V177C700 147 410 207 0 175Z" fill="url(#blue)"/>
+<path d="M0 166C330 203 630 144 960 177V196C680 167 340 217 0 185Z" fill="#58a6ff" opacity=".19"/>
+<g fill="#fff" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif">
+<text x="480" y="92" font-size="52" font-weight="700">Gabriele Rossoni</text>
+<text x="480" y="132" font-size="20">Computer science student · AI tools &amp; automation</text>
+</g></svg>

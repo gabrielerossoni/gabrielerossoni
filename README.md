@@ -1,10 +1,13 @@
 <div align="center">
 
-<!-- Capsule Header -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:1F6FEB,100:58A6FF&height=200&section=header&text=Gabriele%20Rossoni&fontSize=50&fontColor=FFFFFF&fontAlignY=35&desc=Developer%20%7C%20AI%20Builder%20%7C%20IoT%20Tinkerer&descAlignY=58&descColor=8B949E" />
+<!-- Profile banner -->
+<picture>
+  <source media="(max-width: 600px)" srcset="assets/header-mobile.svg" />
+  <img src="assets/header.svg" width="100%" alt="Gabriele Rossoni, computer science student working with AI tools, MCP and automation" />
+</picture>
 
 <!-- Typing SVG -->
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&pause=1200&color=58A6FF&center=true&vCenter=true&width=600&lines=Building+AI-powered+systems+🤖;Crafting+IoT+%26+LoRaWAN+networks+📡;Learning+every+single+day+🌱;Open+source+%26+collaboration+first+🤝)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&pause=1800&color=58A6FF&center=true&vCenter=true&width=650&lines=MCP+servers+%26+agent+skills%3BAI+agents+%26+tool-based+workflows%3BLocal+LLMs+with+Ollama%3BPython+tools%2C+bots+%26+web+apps)](https://git.io/typing-svg)
 
 <!-- Social Badges -->
 [![GitHub followers](https://img.shields.io/github/followers/gabrielerossoni?style=for-the-badge&logo=github&logoColor=white&color=1F6FEB&labelColor=0D1117)](https://github.com/gabrielerossoni?tab=followers)
@@ -17,21 +20,14 @@
 
 ## ⚡ About Me
 
-```yaml
-name: Gabriele Rossoni
-location: Crema, Lombardy 🇮🇹
-role: Student Developer & AI Builder
-languages: [Python, Java, C, JavaScript, TypeScript, SQL, C#]
-ai_stack: [Ollama, FastAPI, ChromaDB, Whisper, WebSocket]
-focus:
-  - LLM-powered agentic AI systems
-  - IoT & LoRaWAN embedded networks
-  - Telegram bots & automation tools
-currently_learning:
-  - Machine Learning & agentic AI
-  - Cybersecurity & data structures
-  - Cloud & DevOps basics
-```
+I'm a computer science student interested in AI agents and automation. I experiment with MCP, reusable agent skills and local models to connect AI with tools and data. My projects range from Python utilities and Telegram bots to web apps and M.A.Y.A., a small smart-home prototype.
+
+<p align="center">
+  <picture>
+    <source media="(max-width: 600px)" srcset="assets/terminal-mobile.svg" />
+    <img src="assets/terminal.svg" width="100%" alt="Terminal profile: computer science student working with MCP servers, agent skills, AI agents and local LLMs" />
+  </picture>
+</p>
 
 ---
 
@@ -39,36 +35,40 @@ currently_learning:
 
 <div align="center">
 
-**Languages**
+<p><strong>AI &amp; Agent Tools</strong></p>
 
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
-![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+<a href="https://modelcontextprotocol.io"><img src="assets/mcp-brand.svg" width="80" alt="MCP" /></a>
+<a href="https://agentskills.io"><img src="assets/agent-skills-restored.svg" width="80" alt="Agent Skills" /></a>
+<img src="assets/ai-agents-brand.svg" width="80" alt="AI Agents" />
+<a href="https://ollama.com"><img src="assets/ollama-brand.svg" width="80" alt="Ollama" /></a>
 
+<p>Tool integration · Agent workflows · Local models</p>
 
-**Web & Frameworks**
+<p><strong>Languages</strong></p>
+<a href="https://www.python.org"><img src="https://skillicons.dev/icons?i=python&amp;theme=dark" width="80" alt="Python" /></a>
+<img src="https://skillicons.dev/icons?i=js&amp;theme=dark" width="80" alt="JavaScript" />
+<img src="https://skillicons.dev/icons?i=c&amp;theme=dark" width="80" alt="C" />
+<img src="https://skillicons.dev/icons?i=html&amp;theme=dark" width="80" alt="HTML" />
+<img src="https://skillicons.dev/icons?i=css&amp;theme=dark" width="80" alt="CSS" />
 
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+<p>Automation scripts · Web interfaces · School projects</p>
 
+<p><strong>Backend &amp; Data</strong></p>
+<a href="https://fastapi.tiangolo.com"><img src="https://skillicons.dev/icons?i=fastapi&amp;theme=dark" width="80" alt="FastAPI" /></a>
+<a href="https://nodejs.org"><img src="https://skillicons.dev/icons?i=nodejs&amp;theme=dark" width="80" alt="Node.js" /></a>
+<a href="https://sqlite.org"><img src="https://skillicons.dev/icons?i=sqlite&amp;theme=dark" width="80" alt="SQLite" /></a>
 
-**Tools & Platforms**
+<p>APIs · Small services · Local databases</p>
 
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
-![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Arduino](https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white)
-![Raspberry Pi](https://img.shields.io/badge/Raspberry_Pi-C51A4A?style=for-the-badge&logo=raspberrypi&logoColor=white)
-![Ollama](https://img.shields.io/badge/Ollama-000000?style=for-the-badge&logoColor=white)
-![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)
+<p><strong>Apps &amp; Services</strong></p>
+<a href="https://github.com/gabrielerossoni"><img src="assets/github-brand.svg" width="80" alt="GitHub" /></a>
+<a href="https://telegram.org"><img src="assets/telegram-color.svg" width="80" alt="Telegram" /></a>
+<a href="https://notebooklm.google.com"><img src="assets/notebooklm-brand.svg" width="80" alt="NotebookLM" /></a>
+<a href="https://n8n.io"><img src="assets/n8n-restored.svg" width="80" alt="n8n" /></a>
+<a href="https://www.notion.so"><img src="assets/notion-brand.svg" width="80" alt="Notion" /></a>
+<a href="https://obsidian.md"><img src="assets/obsidian-brand.svg" width="80" alt="Obsidian" /></a>
+
+<p>Workflow automation · Knowledge management · Project organization</p>
 
 </div>
 
@@ -77,68 +77,87 @@ currently_learning:
 ## 🚀 Featured Projects
 
 <div align="center">
-<div align="center">
 <table>
   <tr>
     <td width="50%" align="center">
-      <h3>🤖 Maya AI Assistant</h3>
-      <img src="https://img.shields.io/github/last-commit/gabrielerossoni/maya-ai-assistant?style=flat-square&logo=github" />
+      <h3>🤖 M.A.Y.A. AI Assistant</h3>
+      <img src="https://img.shields.io/github/last-commit/gabrielerossoni/maya-ai-assistant?style=flat-square&logo=github"  alt=""/>
       <br/><br/>
-      <p>AI agentica locale con Ollama + FastAPI, pipeline Planner→Executor→Validator, Arduino, ChromaDB, Whisper TTS e 14 tool modulari.</p>
+      <p>A smart-home prototype using Ollama and FastAPI on a PC, with Arduino controlling lights, servos and sensors. Presented at Arduino Day 2026.</p>
       <p>
-        <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
-        <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" />
-        <img src="https://img.shields.io/badge/Ollama-000000?style=flat-square" />
+        <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"  alt=""/>
+        <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white"  alt=""/>
+        <img src="https://img.shields.io/badge/Ollama-000000?style=flat-square"  alt=""/>
       </p>
       <a href="https://github.com/gabrielerossoni/maya-ai-assistant">
-        <img src="https://img.shields.io/badge/View%20on%20GitHub-%23181717.svg?style=for-the-badge&logo=github&logoColor=white" />
+        <img src="https://img.shields.io/badge/View%20on%20GitHub-%23181717.svg?style=for-the-badge&logo=github&logoColor=white"  alt=""/>
       </a>
     </td>
     <td width="50%" align="center">
       <h3>🗂️ Download Organizer</h3>
-      <img src="https://img.shields.io/github/last-commit/gabrielerossoni/download_organizer?style=flat-square&logo=github" />
+      <img src="https://img.shields.io/github/last-commit/gabrielerossoni/download_organizer?style=flat-square&logo=github"  alt=""/>
       <br/><br/>
-      <p>Organizza i download automaticamente con LLM locale (Ollama). Impara dalle tue abitudini. 100% privacy-first, nessun dato inviato al cloud.</p>
+      <p>A Python utility for organizing downloads on Windows. Uses SQLite to track files, supports local semantic classification and starts new setups in dry-run mode.</p>
       <p>
-        <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
-        <img src="https://img.shields.io/badge/Local_LLM-blueviolet?style=flat-square" />
+        <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"  alt=""/>
+        <img src="https://img.shields.io/badge/SQLite-003B57?style=flat-square"  alt=""/>
       </p>
       <a href="https://github.com/gabrielerossoni/download_organizer">
-        <img src="https://img.shields.io/badge/View%20on%20GitHub-%23181717.svg?style=for-the-badge&logo=github&logoColor=white" />
+        <img src="https://img.shields.io/badge/View%20on%20GitHub-%23181717.svg?style=for-the-badge&logo=github&logoColor=white"  alt=""/>
       </a>
     </td>
   </tr>
   <tr>
     <td width="50%" align="center">
       <h3>⛽ Fuel Tracker Bot</h3>
-      <img src="https://img.shields.io/github/last-commit/gabrielerossoni/bot-telegram-fuel-tracker?style=flat-square&logo=github" />
+      <img src="https://img.shields.io/github/last-commit/gabrielerossoni/bot-telegram-fuel-tracker?style=flat-square&logo=github"  alt=""/>
       <br/><br/>
-      <p>Bot Telegram stateless che trova i carburanti più economici nella tua zona. Nessun dato salvato lato server.</p>
+      <p>A Telegram bot and Mini App for checking nearby fuel prices, with a Leaflet map, MASE data and preferences stored on the user’s device.</p>
       <p>
-        <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
-        <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=flat-square&logo=telegram&logoColor=white" />
+        <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"  alt=""/>
+        <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=flat-square&logo=telegram&logoColor=white"  alt=""/>
       </p>
       <a href="https://github.com/gabrielerossoni/bot-telegram-fuel-tracker">
-        <img src="https://img.shields.io/badge/View%20on%20GitHub-%23181717.svg?style=for-the-badge&logo=github&logoColor=white" />
+        <img src="https://img.shields.io/badge/View%20on%20GitHub-%23181717.svg?style=for-the-badge&logo=github&logoColor=white"  alt=""/>
       </a>
     </td>
     <td width="50%" align="center">
-      <h3>🧵 Gestione Sartoria</h3>
-      <img src="https://img.shields.io/github/last-commit/gabrielerossoni/GestioneSartoria?style=flat-square&logo=github" />
+      <h3>🧵 Tailoring Inventory</h3>
+      <img src="https://img.shields.io/github/last-commit/gabrielerossoni/GestioneSartoria?style=flat-square&logo=github"  alt=""/>
       <br/><br/>
-      <p>Sistema completo in C per monitorare rotoli di tessuto in una sartoria artigianale, con interfaccia web moderna integrata.</p>
+      <p>A school project in C for tracking fabric rolls, withdrawals and offcuts, with persistent storage and a web interface for the inventory.</p>
       <p>
-        <img src="https://img.shields.io/badge/C-00599C?style=flat-square&logo=c&logoColor=white" />
-        <img src="https://img.shields.io/badge/Web_UI-HTML-E34F26?style=flat-square" />
+        <img src="https://img.shields.io/badge/C-00599C?style=flat-square&logo=c&logoColor=white"  alt=""/>
+        <img src="https://img.shields.io/badge/Web_UI-HTML-E34F26?style=flat-square"  alt=""/>
       </p>
       <a href="https://github.com/gabrielerossoni/GestioneSartoria">
-        <img src="https://img.shields.io/badge/View%20on%20GitHub-%23181717.svg?style=for-the-badge&logo=github&logoColor=white" />
+        <img src="https://img.shields.io/badge/View%20on%20GitHub-%23181717.svg?style=for-the-badge&logo=github&logoColor=white"  alt=""/>
       </a>
     </td>
   </tr>
 </table>
 </div>
-</div>
+
+---
+
+## 🚀 Contribution Arcade
+
+<p align="center"><strong>Space Shooter</strong><br><sub>My public contribution calendar as a space-shooter animation.</sub></p>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-reduced-motion: reduce)" srcset="assets/space-shooter-static.png" />
+    <img src="assets/space-shooter.gif" width="100%" alt="Space Shooter generated from gabrielerossoni’s public contributions" />
+  </picture>
+</p>
+
+<p align="center"><strong>Contribution City</strong><br><sub>One building per day over the past week. Building size follows the contribution count.</sub></p>
+
+<p align="center">
+  <img src="assets/contribution-city.svg" width="100%" alt="Isometric city showing the past seven days of public contributions" />
+</p>
+
+<p align="center"><sub>Public contribution snapshot: <!-- contribution-date -->2026-10-25<!-- /contribution-date -->.</sub></p>
 
 ---
 
@@ -162,11 +181,14 @@ currently_learning:
 
 <br/>
 
-<img src="https://github-readme-streak-stats.herokuapp.com?user=gabrielerossoni&theme=github-dark-blue&hide_border=true&background=0D1117&ring=58A6FF&fire=FFB000&currStreakLabel=58A6FF" />
+<img src="https://streak-stats.demolab.com?user=gabrielerossoni&theme=github-dark-blue&hide_border=true&background=0D1117&ring=58A6FF&fire=FFB000&currStreakLabel=58A6FF"  alt=""/>
 
 <br/>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=gabrielerossoni&theme=github-compact&bg_color=0D1117&color=58A6FF&line=1F6FEB&point=FFB000&hide_border=true" />
+<picture>
+  <source media="(max-width: 600px)" srcset="assets/activity-mobile.svg" />
+  <img src="assets/activity.svg" width="100%" alt="Daily public contributions over the past twelve months" />
+</picture>
 
 </div>
 
@@ -185,8 +207,7 @@ currently_learning:
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:58A6FF,100:0D1117&height=100&section=footer" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:58A6FF,100:0D1117&height=100&section=footer"  alt=""/>
 
-<sub>✨ Crafted with passion from Crema, Italy · <b>Gabriele Rossoni</b></sub>
 
 </div>

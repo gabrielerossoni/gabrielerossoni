@@ -1,0 +1,319 @@
+// Adapted from mna11/contribution-city (MIT); see city-assets/LICENSE.
+const fs = require('fs');
+const path = require('path');
+
+// GitHub API 설정
+
+
+// SVG 파일들 로드
+const assetsDir = path.join(__dirname, 'city-assets');
+
+function loadSVGContent(filename) {
+    const filepath = path.join(assetsDir, filename);
+    if (fs.existsSync(filepath)) {
+        return fs.readFileSync(filepath, 'utf8');
+    }
+    return null;
+}
+
+// SVG 내용에서 내부 요소만 추출 (svg 태그 제거)
+function extractSVGInner(svgContent) {
+    if (!svgContent) return '';
+    // SVG 태그 제거하고 내부 내용만 추출
+    const match = svgContent.match(/<svg[^>]*>([\s\S]*)<\/svg>/i);
+    return match ? match[1] : svgContent;
+}
+
+// GitHub contribution 데이터 가져오기
+async function fetchContributions() {
+    return JSON.parse(fs.readFileSync(process.argv[2], 'utf8'));
+}
+
+// 최근 7일 데이터 가져오기
+function getLastWeekContributions(calendar) {
+    if (!calendar || !calendar.weeks) return [];
+
+    const allDays = [];
+    calendar.weeks.forEach(week => {
+        week.contributionDays.forEach(day => {
+            allDays.push(day);
+        });
+    });
+
+    // 날짜순 정렬 후 최근 7일 (과거 -> 현재 순서)
+    allDays.sort((a, b) => new Date(a.date) - new Date(b.date));
+    const lastWeek = allDays.slice(-7);
+
+    return lastWeek;
+}
+
+// 커밋 수에 따른 건물 타입 결정
+function getBuildingType(commits) {
+    if (commits === 0) return null;
+    if (commits >= 1 && commits <= 3) return 'Xsmall';
+    if (commits >= 4 && commits <= 6) return 'Small';
+    if (commits >= 7 && commits <= 9) return 'Middle';
+    return 'Big'; // 10+
+}
+
+// 요일 이름 배열
+const WEEKDAY_NAMES = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+
+// 배치 위치 정의 (isometric 좌표)
+// Base.svg에서 추출한 정확한 좌표
+const POSITIONS = {
+    // 표지판 위치 (도로 왼쪽) - 7개 슬롯 (첫번째가 왼쪽 위, 마지막이 오른쪽 아래)
+    signs: [
+        { x: 115, y: 284 },     // 슬롯 0
+        { x: 302, y: 388 },     // 슬롯 1
+        { x: 482, y: 498 },     // 슬롯 2
+        { x: 680, y: 610 },     // 슬롯 3
+        { x: 876, y: 728 },     // 슬롯 4
+        { x: 1081, y: 847 },    // 슬롯 5
+        { x: 1294, y: 958 },    // 슬롯 6
+    ],
+    // 건물 위치 (도로 오른쪽) - Base.svg의 회색 박스 위치
+    buildings: [
+        { x: 721.904, y: 56 },      // 슬롯 0
+        { x: 904.888, y: 160.522 }, // 슬롯 1
+        { x: 1086.92, y: 267.112 }, // 슬롯 2
+        { x: 1284.87, y: 379.945 }, // 슬롯 3
+        { x: 1488.55, y: 496.221 }, // 슬롯 4
+        { x: 1690.83, y: 610.808 }, // 슬롯 5
+        { x: 1896.43, y: 726.209 }, // 슬롯 6
+    ],
+    // 숫자 위치 (표지판 내부, 표지판 기준 상대 좌표)
+    numberOffset: { x: 30, y: 100 }
+};
+
+// 건물 타입별 오프셋 (concept.svg에서 계산)
+// 회색 박스 좌표에서 실제 건물 배치 좌표로의 오프셋
+const BUILDING_OFFSETS = {
+    'Xsmall': { x: -72, y: -56 },   // 650 - 721.904 ≈ -72, 0 - 56 = -56
+    'Small':  { x: -78, y: -57 },   // 828 - 904.888 ≈ -77, 104 - 160.522 ≈ -57
+    'Middle': { x: -69, y: -157 },  // Middle은 더 높으므로 y 오프셋 더 큼
+    'Big':    { x: -126, y: -212 }, // Big은 가장 크므로 y 오프셋 가장 큼
+};
+
+// 단일 숫자 SVG 생성
+function createNumberSVG(count, baseX, baseY) {
+    const digit = count.toString();
+    let result = '';
+
+    if (count < 10) {
+        // 한 자리 숫자
+        const numSvg = loadSVGContent(`${digit}.svg`);
+        if (numSvg) {
+            const inner = extractSVGInner(numSvg);
+            result += `<g transform="translate(${baseX}, ${baseY})">${inner}</g>\n`;
+        }
+    } else {
+        // 두 자리 숫자 - 왼쪽으로 오프셋해서 중앙 정렬
+        const digits = digit.split('');
+        const startX = baseX - 9;  // 왼쪽으로 이동하여 중앙 정렬
+        const startY = baseY - 5;  // 약간 위로
+
+        digits.forEach((d, idx) => {
+            const numSvg = loadSVGContent(`${d}.svg`);
+            if (numSvg) {
+                const inner = extractSVGInner(numSvg);
+                // isometric 좌표에서 두 번째 숫자는 오른쪽 아래로
+                const offsetX = idx * 18;
+                const offsetY = idx * 10;
+                result += `<g transform="translate(${startX + offsetX}, ${startY + offsetY})">${inner}</g>\n`;
+            }
+        });
+    }
+
+    return result;
+}
+
+// 메인 SVG 생성
+async function generateContributionCity() {
+    console.log('Fetching GitHub contributions...');
+
+
+    const calendar = await fetchContributions();
+    let weekData = calendar ? getLastWeekContributions(calendar) : [];
+
+    // 연간 커밋 수 계산 (최근 1년)
+    let yearCommits = 0;
+    if (calendar && calendar.weeks) {
+        calendar.weeks.forEach(week => {
+            week.contributionDays.forEach(day => {
+                yearCommits += day.contributionCount;
+            });
+        });
+    }
+
+    if (weekData.length !== 7) throw new Error('Seven real contribution days are required');
+
+    // 주간 커밋 수 계산
+    const weekCommits = weekData.reduce((sum, d) => sum + d.contributionCount, 0);
+
+    console.log('Last 7 days data:');
+    weekData.forEach((d, i) => {
+        const dayName = WEEKDAY_NAMES[new Date(d.date).getDay()];
+        console.log(`  ${i + 1}. ${d.date} (${dayName}): ${d.contributionCount} commits`);
+    });
+    console.log(`Year commits: ${yearCommits}`);
+    console.log(`Week commits: ${weekCommits}`);
+
+    // Base SVG 로드
+    const baseSvg = loadSVGContent('Base.svg');
+    if (!baseSvg) {
+        console.error('Base.svg not found!');
+        return;
+    }
+
+    // Base SVG의 viewBox와 크기 추출
+    const viewBoxMatch = baseSvg.match(/viewBox="([^"]+)"/);
+    const viewBox = viewBoxMatch ? viewBoxMatch[1] : '0 0 2166 1280';
+
+    let svgContent = `<svg width="2166" height="1280" viewBox="${viewBox}" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+    <style type="text/css">
+
+        .stats-text {
+            font-family: ui-monospace, Consolas, monospace;
+            font-size: 48px;
+            fill: #ffffff;
+            font-weight: bold;
+        }
+        .stats-label {
+            font-family: ui-monospace, Consolas, monospace;
+            font-size: 40px;
+            fill: #9CA3AF;
+            font-weight: bold;
+        }
+    </style>
+</defs>
+
+<!-- 밤하늘 배경 -->
+<rect width="2166" height="1280" fill="#0d1117"/>
+
+<!-- 별들 -->
+<circle cx="150" cy="80" r="2" fill="white" opacity="0.8"/>
+<circle cx="320" cy="120" r="1.5" fill="white" opacity="0.6"/>
+<circle cx="480" cy="60" r="2" fill="white" opacity="0.9"/>
+<circle cx="620" cy="150" r="1" fill="white" opacity="0.5"/>
+<circle cx="780" cy="40" r="2.5" fill="white" opacity="0.7"/>
+<circle cx="950" cy="100" r="1.5" fill="white" opacity="0.8"/>
+<circle cx="1100" cy="70" r="2" fill="white" opacity="0.6"/>
+<circle cx="1250" cy="130" r="1" fill="white" opacity="0.9"/>
+<circle cx="1400" cy="50" r="2" fill="white" opacity="0.5"/>
+<circle cx="1550" cy="90" r="1.5" fill="white" opacity="0.7"/>
+<circle cx="1700" cy="140" r="2" fill="white" opacity="0.8"/>
+<circle cx="1850" cy="60" r="1" fill="white" opacity="0.6"/>
+<circle cx="2000" cy="110" r="2.5" fill="white" opacity="0.9"/>
+<circle cx="100" cy="200" r="1" fill="white" opacity="0.5"/>
+<circle cx="250" cy="180" r="2" fill="white" opacity="0.7"/>
+<circle cx="400" cy="220" r="1.5" fill="white" opacity="0.8"/>
+<circle cx="550" cy="190" r="1" fill="white" opacity="0.6"/>
+<circle cx="700" cy="240" r="2" fill="white" opacity="0.9"/>
+<circle cx="850" cy="170" r="1.5" fill="white" opacity="0.5"/>
+<circle cx="1000" cy="210" r="2" fill="white" opacity="0.7"/>
+<circle cx="1150" cy="250" r="1" fill="white" opacity="0.8"/>
+<circle cx="1300" cy="190" r="2.5" fill="white" opacity="0.6"/>
+<circle cx="1450" cy="230" r="1.5" fill="white" opacity="0.9"/>
+<circle cx="1600" cy="200" r="2" fill="white" opacity="0.5"/>
+<circle cx="1750" cy="260" r="1" fill="white" opacity="0.7"/>
+<circle cx="1900" cy="180" r="2" fill="white" opacity="0.8"/>
+<circle cx="2050" cy="220" r="1.5" fill="white" opacity="0.6"/>
+<circle cx="80" cy="320" r="2" fill="white" opacity="0.7"/>
+<circle cx="200" cy="380" r="1.5" fill="white" opacity="0.5"/>
+<circle cx="350" cy="340" r="1" fill="white" opacity="0.8"/>
+<circle cx="500" cy="420" r="2" fill="white" opacity="0.6"/>
+<circle cx="180" cy="480" r="1.5" fill="white" opacity="0.9"/>
+<circle cx="60" cy="550" r="2" fill="white" opacity="0.5"/>
+<circle cx="120" cy="650" r="1" fill="white" opacity="0.7"/>
+<circle cx="40" cy="720" r="2.5" fill="white" opacity="0.8"/>
+<circle cx="90" cy="800" r="1.5" fill="white" opacity="0.6"/>
+<circle cx="150" cy="880" r="2" fill="white" opacity="0.9"/>
+<circle cx="70" cy="950" r="1" fill="white" opacity="0.5"/>
+<circle cx="130" cy="1020" r="2" fill="white" opacity="0.7"/>
+<circle cx="50" cy="1100" r="1.5" fill="white" opacity="0.8"/>
+<circle cx="1950" cy="300" r="2" fill="white" opacity="0.6"/>
+<circle cx="2080" cy="350" r="1.5" fill="white" opacity="0.9"/>
+<circle cx="2020" cy="420" r="1" fill="white" opacity="0.5"/>
+<circle cx="2100" cy="500" r="2" fill="white" opacity="0.7"/>
+<circle cx="1980" cy="580" r="2.5" fill="white" opacity="0.8"/>
+<circle cx="2050" cy="650" r="1.5" fill="white" opacity="0.6"/>
+<circle cx="2000" cy="720" r="2" fill="white" opacity="0.9"/>
+<circle cx="2080" cy="800" r="1" fill="white" opacity="0.5"/>
+<circle cx="2030" cy="880" r="1.5" fill="white" opacity="0.7"/>
+<circle cx="2100" cy="950" r="2" fill="white" opacity="0.8"/>
+<circle cx="1970" cy="1050" r="1" fill="white" opacity="0.6"/>
+<circle cx="2060" cy="1120" r="2" fill="white" opacity="0.9"/>
+<circle cx="300" cy="1150" r="1.5" fill="white" opacity="0.5"/>
+<circle cx="500" cy="1100" r="2" fill="white" opacity="0.7"/>
+<circle cx="700" cy="1180" r="1" fill="white" opacity="0.8"/>
+<circle cx="900" cy="1120" r="2.5" fill="white" opacity="0.6"/>
+<circle cx="1100" cy="1200" r="1.5" fill="white" opacity="0.9"/>
+<circle cx="1300" cy="1150" r="2" fill="white" opacity="0.5"/>
+<circle cx="1500" cy="1100" r="1" fill="white" opacity="0.7"/>
+<circle cx="1700" cy="1180" r="2" fill="white" opacity="0.8"/>
+<circle cx="1900" cy="1220" r="1.5" fill="white" opacity="0.6"/>
+
+<!-- YEAR / WEEK 텍스트 -->
+<text x="50" y="1180" class="stats-label">YEAR:</text>
+<text x="220" y="1180" class="stats-text">${yearCommits}</text>
+<text x="50" y="1230" class="stats-label">WEEK:</text>
+<text x="220" y="1230" class="stats-text">${weekCommits}</text>
+
+`;
+
+    // Base 추가
+    svgContent += extractSVGInner(baseSvg);
+    svgContent += '\n';
+
+    // 7일치 데이터를 순서대로 배치 (첫번째가 가장 오래된 날, 마지막이 오늘)
+    for (let i = 0; i < 7; i++) {
+        const dayData = weekData[i];
+        const commits = dayData ? dayData.contributionCount : 0;
+        const date = new Date(dayData.date);
+        const weekday = WEEKDAY_NAMES[date.getDay()];
+
+        // 건물 추가 (커밋이 있을 경우에만)
+        const buildingType = getBuildingType(commits);
+        if (buildingType) {
+            const buildingSvg = loadSVGContent(`${buildingType}.svg`);
+            if (buildingSvg) {
+                const buildingPos = POSITIONS.buildings[i];
+                const buildingInner = extractSVGInner(buildingSvg);
+                const offset = BUILDING_OFFSETS[buildingType];
+
+                svgContent += `<!-- Day ${i + 1} (${weekday}) Building (${buildingType}) - ${commits} commits -->\n`;
+                svgContent += `<g transform="translate(${buildingPos.x + offset.x}, ${buildingPos.y + offset.y})">\n`;
+                svgContent += buildingInner;
+                svgContent += `</g>\n\n`;
+            }
+        }
+
+        // 표지판 추가 (해당 요일의 표지판 SVG 사용)
+        const signSvg = loadSVGContent(`${weekday}.svg`);
+        if (signSvg) {
+            const signPos = POSITIONS.signs[i];
+            const signInner = extractSVGInner(signSvg);
+            svgContent += `<!-- Day ${i + 1} (${weekday}) Sign -->\n`;
+            svgContent += `<g transform="translate(${signPos.x}, ${signPos.y})">\n`;
+            svgContent += signInner;
+
+            // 숫자 추가
+            svgContent += createNumberSVG(commits, POSITIONS.numberOffset.x, POSITIONS.numberOffset.y);
+            svgContent += `</g>\n\n`;
+        }
+    }
+
+    svgContent += '</svg>';
+
+    // 파일 저장
+    const outputPath = process.argv[3];
+    fs.writeFileSync(outputPath, svgContent);
+    console.log(`Generated: ${outputPath}`);
+
+    return svgContent;
+}
+
+// 실행
+generateContributionCity().catch(error => { console.error(error); process.exitCode = 1; });
