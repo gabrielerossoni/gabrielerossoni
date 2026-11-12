@@ -22,55 +22,14 @@
 
 I'm a computer science student interested in AI agents and automation. I experiment with MCP, reusable agent skills and local models to connect AI with tools and data. My projects range from Python utilities and Telegram bots to web apps and M.A.Y.A., a small smart-home prototype.
 
+[Explore my portfolio](https://gabrielerossoni.github.io/) · [LinkedIn](https://linkedin.com/in/gabriele-rossoni-54ab02268)
+
 <p align="center">
   <picture>
     <source media="(max-width: 600px)" srcset="assets/terminal-mobile.svg" />
     <img src="assets/terminal.svg" width="100%" alt="Terminal profile: computer science student working with MCP servers, agent skills, AI agents and local LLMs" />
   </picture>
 </p>
-
----
-
-## 🛠️ Tech Stack
-
-<div align="center">
-
-<p><strong>AI &amp; Agent Tools</strong></p>
-
-<a href="https://modelcontextprotocol.io"><img src="assets/mcp-brand.svg" width="80" alt="MCP" /></a>
-<a href="https://agentskills.io"><img src="assets/agent-skills-restored.svg" width="80" alt="Agent Skills" /></a>
-<img src="assets/ai-agents-brand.svg" width="80" alt="AI Agents" />
-<a href="https://ollama.com"><img src="assets/ollama-brand.svg" width="80" alt="Ollama" /></a>
-
-<p>Tool integration · Agent workflows · Local models</p>
-
-<p><strong>Languages</strong></p>
-<a href="https://www.python.org"><img src="https://skillicons.dev/icons?i=python&amp;theme=dark" width="80" alt="Python" /></a>
-<img src="https://skillicons.dev/icons?i=js&amp;theme=dark" width="80" alt="JavaScript" />
-<img src="https://skillicons.dev/icons?i=c&amp;theme=dark" width="80" alt="C" />
-<img src="https://skillicons.dev/icons?i=html&amp;theme=dark" width="80" alt="HTML" />
-<img src="https://skillicons.dev/icons?i=css&amp;theme=dark" width="80" alt="CSS" />
-
-<p>Automation scripts · Web interfaces · School projects</p>
-
-<p><strong>Backend &amp; Data</strong></p>
-<a href="https://fastapi.tiangolo.com"><img src="https://skillicons.dev/icons?i=fastapi&amp;theme=dark" width="80" alt="FastAPI" /></a>
-<a href="https://nodejs.org"><img src="https://skillicons.dev/icons?i=nodejs&amp;theme=dark" width="80" alt="Node.js" /></a>
-<a href="https://sqlite.org"><img src="https://skillicons.dev/icons?i=sqlite&amp;theme=dark" width="80" alt="SQLite" /></a>
-
-<p>APIs · Small services · Local databases</p>
-
-<p><strong>Apps &amp; Services</strong></p>
-<a href="https://github.com/gabrielerossoni"><img src="assets/github-brand.svg" width="80" alt="GitHub" /></a>
-<a href="https://telegram.org"><img src="assets/telegram-color.svg" width="80" alt="Telegram" /></a>
-<a href="https://notebooklm.google.com"><img src="assets/notebooklm-brand.svg" width="80" alt="NotebookLM" /></a>
-<a href="https://n8n.io"><img src="assets/n8n-restored.svg" width="80" alt="n8n" /></a>
-<a href="https://www.notion.so"><img src="assets/notion-brand.svg" width="80" alt="Notion" /></a>
-<a href="https://obsidian.md"><img src="assets/obsidian-brand.svg" width="80" alt="Obsidian" /></a>
-
-<p>Workflow automation · Knowledge management · Project organization</p>
-
-</div>
 
 ---
 
@@ -140,6 +99,52 @@ I'm a computer science student interested in AI agents and automation. I experim
 
 ---
 
+## 🛠️ Tech Stack
+
+<div align="center">
+
+<p><strong>AI &amp; Agent Tools</strong></p>
+
+<a href="https://modelcontextprotocol.io"><img src="assets/mcp-brand.svg" width="80" alt="MCP" /></a>
+<a href="https://agentskills.io"><img src="assets/agent-skills-restored.svg" width="80" alt="Agent Skills" /></a>
+<img src="assets/ai-agents-brand.svg" width="80" alt="AI Agents" />
+<a href="https://ollama.com"><img src="assets/ollama-brand.svg" width="80" alt="Ollama" /></a>
+
+<p>Tool integration · Agent workflows · Local models</p>
+
+<p><strong>Languages</strong></p>
+<a href="https://www.python.org"><img src="https://skillicons.dev/icons?i=python&amp;theme=dark" width="80" alt="Python" /></a>
+<img src="https://skillicons.dev/icons?i=js&amp;theme=dark" width="80" alt="JavaScript" />
+<img src="https://skillicons.dev/icons?i=c&amp;theme=dark" width="80" alt="C" />
+<img src="https://skillicons.dev/icons?i=html&amp;theme=dark" width="80" alt="HTML" />
+<img src="https://skillicons.dev/icons?i=css&amp;theme=dark" width="80" alt="CSS" />
+
+<p>Automation scripts · Web interfaces · School projects</p>
+
+<p><strong>Backend &amp; Data</strong></p>
+<a href="https://fastapi.tiangolo.com"><img src="https://skillicons.dev/icons?i=fastapi&amp;theme=dark" width="80" alt="FastAPI" /></a>
+<a href="https://nodejs.org"><img src="https://skillicons.dev/icons?i=nodejs&amp;theme=dark" width="80" alt="Node.js" /></a>
+<a href="https://sqlite.org"><img src="https://skillicons.dev/icons?i=sqlite&amp;theme=dark" width="80" alt="SQLite" /></a>
+
+<p>APIs · Small services · Local databases</p>
+
+<p><strong>Apps &amp; Services</strong></p>
+<a href="https://github.com/gabrielerossoni"><img src="assets/github-brand.svg" width="80" alt="GitHub" /></a>
+<a href="https://telegram.org"><img src="assets/telegram-color.svg" width="80" alt="Telegram" /></a>
+<a href="https://notebooklm.google.com"><img src="assets/notebooklm-brand.svg" width="80" alt="NotebookLM" /></a>
+<a href="https://n8n.io"><img src="assets/n8n-restored.svg" width="80" alt="n8n" /></a>
+<a href="https://www.notion.so"><img src="assets/notion-brand.svg" width="80" alt="Notion" /></a>
+<a href="https://obsidian.md"><img src="assets/obsidian-brand.svg" width="80" alt="Obsidian" /></a>
+
+<p>Workflow automation · Knowledge management · Project organization</p>
+
+</div>
+
+---
+
+<details>
+<summary>Contribution animations and activity</summary>
+
 ## 🚀 Contribution Arcade
 
 <p align="center"><strong>Space Shooter</strong><br><sub>My public contribution calendar as a space-shooter animation.</sub></p>
@@ -193,6 +198,8 @@ I'm a computer science student interested in AI agents and automation. I experim
 </div>
 
 ---
+
+</details>
 
 ## 📫 Connect With Me
 
